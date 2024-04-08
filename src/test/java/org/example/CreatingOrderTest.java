@@ -2,10 +2,8 @@ package org.example;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -14,7 +12,7 @@ import static org.example.Constants.*;
 import static org.hamcrest.Matchers.notNullValue;
 
 @RunWith(Parameterized.class)
-public class CreatingOrderTest {
+public class CreatingOrderTest  extends BaseTest {
     private final String firstName = "Naruto";
     private final String lastName = "Uchiha";
     private final String address = "Konoha, 142 apt.";
@@ -39,10 +37,6 @@ public class CreatingOrderTest {
         };
     }
 
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = BASE_URL;
-    }
 
     @Test
     @DisplayName("Создание заказа")

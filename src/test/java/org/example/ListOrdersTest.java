@@ -2,9 +2,7 @@ package org.example;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.junit.Before;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -15,11 +13,7 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class ListOrdersTest {
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = BASE_URL;
-    }
+public class ListOrdersTest  extends BaseTest {
 
     @Test
     @DisplayName("Получение списка заказов без параметров")

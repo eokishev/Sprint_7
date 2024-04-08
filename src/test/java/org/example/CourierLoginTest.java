@@ -5,22 +5,17 @@ import io.qameta.allure.Issue;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+
 import static org.apache.http.HttpStatus.*;
 
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.example.Constants.*;
 import static org.example.CourierApi.*;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class CourierLoginTest {
-
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = BASE_URL;
-    }
+public class CourierLoginTest extends BaseTest {
 
     @Test
     @DisplayName("Авторизация существующего курьера")

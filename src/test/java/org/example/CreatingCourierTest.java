@@ -3,23 +3,16 @@ package org.example;
 import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.apache.http.HttpStatus.*;
 import static org.example.Constants.*;
 import static org.example.CourierApi.*;
 
-public class CreatingCourierTest {
-
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = BASE_URL;
-    }
+public class CreatingCourierTest  extends BaseTest {
 
     @Test
     @DisplayName("Создание нового курьера")

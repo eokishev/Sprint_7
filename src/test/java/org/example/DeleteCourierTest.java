@@ -3,9 +3,7 @@ package org.example;
 import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.junit.Before;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -13,11 +11,7 @@ import static org.apache.http.HttpStatus.*;
 import static org.example.Constants.*;
 import static org.example.CourierApi.*;
 
-public class DeleteCourierTest {
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = BASE_URL;
-    }
+public class DeleteCourierTest  extends BaseTest {
 
     @Test
     @DisplayName("Удаление существующего курьера")
